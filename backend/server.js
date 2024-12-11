@@ -20,9 +20,7 @@ const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY
 console.log('Supabase initialized:', supabase);
 
 
-app.use(cors({
-  origin: 'http://localhost:5173',  // Atur sesuai dengan domain frontend Anda
-}));
+
 
 app.use(express.json());
 
