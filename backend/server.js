@@ -31,7 +31,10 @@ app.use('/api/users', userRoutes(supabase));
 app.use('/api/payments', paymentRoutes(supabase));
 app.use('/api/rooms', roomsRoutes(supabase));
 app.use('/api', notificationRoutes(supabase));
-  
+
+app.use("/",(req,res) => {
+res.send ("server berjalan");
+}
 
 // Start Server
 const PORT = process.env.PORT || 5000;
