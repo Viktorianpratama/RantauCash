@@ -4,7 +4,7 @@ import express from 'express';
 const app = express();
 
 
-app.use("/home",(req,res) => {
+app.use("/",(req,res) => {
 res.send ("server berjalan");
 }
 
