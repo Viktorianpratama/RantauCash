@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "enginers":{
-  "node":"14.x"
+  "node":"22.x"
   }
   "keywords": [],
   "author": "",
