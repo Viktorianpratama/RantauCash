@@ -19,6 +19,18 @@ if (!process.env.SUPABASE_URL || !process.env.SUPABASE_KEY) {
 const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
 console.log('Supabase initialized:', supabase);
 
+app.use(cors({
+  origin: 'https://rantau-cash-client.vercel.app/',  // Atur sesuai dengan domain frontend Anda
+}));
+
+app.use(express.json());
+
+// Routes
+app.use('/api/users', userRoutes(supabase));
+app.use('/api/payments', paymentRoutes(supabase));
+app.use('/api/rooms', roomsRoutes(supabase));
+app.use('/api', notificationRoutes(supabase));
+
 
 app.use("/",(req,res) => {
 res.send ("server berjalan");
